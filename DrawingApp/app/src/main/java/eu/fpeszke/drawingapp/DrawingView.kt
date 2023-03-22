@@ -24,6 +24,17 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         setUpDrawing()
     }
 
+    private fun setUpDrawing() {
+        mDrawPaint = Paint()
+        mDrawPath = CustomPath(color, mBrushSize)
+        mDrawPaint!!.color = color
+        mDrawPaint!!.style = Paint.Style.STROKE
+        mDrawPaint!!.strokeJoin = Paint.Join.ROUND
+        mDrawPaint!!.strokeCap = Paint.Cap.ROUND
+        mCanvasPaint = Paint(Paint.DITHER_FLAG)
+        // mBrushSize = 20.toFloat()
+    }
+
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         mCanvasBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
@@ -33,7 +44,9 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
     // Change Canvas to Canvas? if fails
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas.drawBitmap(mCanvasBitmap!!, 0f, 0f, mCanvasPaint)
+        mCanvasBitmap?.let {
+            canvas.drawBitmap(mCanvasBitmap!!, 0f, 0f, mCanvasPaint)
+        }
 
         for (path in mPaths) {
             mDrawPaint!!.strokeWidth = path.brushThickness
@@ -90,15 +103,9 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         mDrawPaint!!.strokeWidth = mBrushSize
     }
 
-    private fun setUpDrawing() {
-        mDrawPaint = Paint()
-        mDrawPath = CustomPath(color, mBrushSize)
-        mDrawPaint!!.color = color
-        mDrawPaint!!.style = Paint.Style.STROKE
-        mDrawPaint!!.strokeJoin = Paint.Join.ROUND
-        mDrawPaint!!.strokeCap = Paint.Cap.ROUND
-        mCanvasPaint = Paint(Paint.DITHER_FLAG)
-        // mBrushSize = 20.toFloat()
+    fun setColor(newColor: String) {
+        color = Color.parseColor(newColor)
+        mDrawPaint?.color = color
     }
 
     internal inner class CustomPath(var color: Int,

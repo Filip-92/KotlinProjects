@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/masz_/source/Kotlin/DrawingApp/app/src/main/res/drawable/background_drawing_view_layout.xml" value="0.1" />
         <entry key="..\:/Users/masz_/source/Kotlin/DrawingApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/masz_/source/Kotlin/DrawingApp/app/src/main/res/drawable/large.xml" value="0.1" />
+        <entry key="..\:/Users/masz_/source/Kotlin/DrawingApp/app/src/main/res/drawable/medium.xml" value="0.1" />
+        <entry key="..\:/Users/masz_/source/Kotlin/DrawingApp/app/src/main/res/drawable/pallet_normal.xml" value="0.1" />
+        <entry key="..\:/Users/masz_/source/Kotlin/DrawingApp/app/src/main/res/drawable/pallet_pressed.xml" value="0.1" />
+        <entry key="..\:/Users/masz_/source/Kotlin/DrawingApp/app/src/main/res/drawable/small.xml" value="0.1" />
         <entry key="..\:/Users/masz_/source/Kotlin/DrawingApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/masz_/source/Kotlin/DrawingApp/app/src/main/res/layout/dialog_brush_size.xml" value="0.17806484295845998" />
       </map>
     </option>
   </component>
